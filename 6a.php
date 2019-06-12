@@ -26,24 +26,24 @@
     echo '<h4><i>Меню сайта</i></h4>';
 
     // Массив элементов меню
-    $menu = array (
+    $menu = [
         "Главная",
         "О себе",
         "Контакты",
         "Помощь"
-    );
+    ];
     // Массив элементов подменю
-    $submenu = array (
+    $submenu = [
         "ФИО",
         "Возраст",
         "Место рождения"
-    );
+    ];
 
     // Вывод меню
     echo'<ul>';
         /*
          * Вывод элементов меню
-         * $key     - индекс элементаменю
+         * $key     - индекс элемента меню
          * $menu    - значение элемента меню
          */
         foreach($menu as $key => $element) {
@@ -52,8 +52,8 @@
             if($key==1) {
                 // Если это элемент "О себе" выводим дополнительно меню
                 echo '<ul>';
-                foreach ($submenu as $subkey => $subelement) {
-                    echo "<li><a href=\"#\">$submenu[$subkey]</a></li>";
+                foreach ($submenu as $subelement) {
+                    echo "<li><a href=\"#\">$subelement</a></li>";
                 }
                 echo '</ul>';
             }
