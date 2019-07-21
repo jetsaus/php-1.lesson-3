@@ -72,14 +72,12 @@
           $strLat = '';
           $arrRus = mb_str_split($strRus);
           foreach ($arrRus as $symRus) {
-              $flPresent = FALSE;
-              foreach ($arrTransliteration as $aRus => $aLat) {
-                  if ($symRus == $aRus) {
-                      $strLat .= $aLat;
-                      $flPresent = TRUE;
-                  }
-              }
-              if (!$flPresent) {
+              // Если ключ присутствует в массиве транслитерации
+              if (array_key_exists($symRus, $arrTransliteration)) {
+                  // заменим его на символ транслитерации
+                  $strLat .= $arrTransliteration[$symRus];
+              } else {
+                  // оставим как есть, значит это не кириллица, а другой символ, который не следует заменять
                   $strLat .= $symRus;
               }
           }

@@ -74,24 +74,22 @@
         {
             return preg_split('/(?<!^)(?!$)/u', $string);
         }
-
+    
         /* Функция транслитерации строки, возвращает преобразованную строку */
         function fTransliteration(
-                $arrTransliteration,  // массив транслитерации
-                $strRus = ''          // строка, к которой применяется транслитерация
+            $arrTransliteration,  // массив транслитерации
+            $strRus = ''          // строка, к которой применяется транслитерация
         )
         {
             $strLat = '';
             $arrRus = mbStrSplit($strRus);
             foreach ($arrRus as $symRus) {
-                $flPresent = FALSE;
-                foreach ($arrTransliteration as $aRus => $aLat) {
-                    if ($symRus == $aRus) {
-                        $strLat .= $aLat;
-                        $flPresent = TRUE;
-                    }
-                }
-                if (!$flPresent) {
+                // Если ключ присутствует в массиве транслитерации
+                if (array_key_exists($symRus, $arrTransliteration)) {
+                    // заменим его на символ транслитерации
+                    $strLat .= $arrTransliteration[$symRus];
+                } else {
+                    // оставим как есть, значит это не кириллица, а другой символ, который не следует заменять
                     $strLat .= $symRus;
                 }
             }
