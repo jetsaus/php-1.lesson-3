@@ -50,8 +50,8 @@
         }
       /*ГОЛОВНОЙ МОДУЛЬ*/
       /*Получаем строку из поля ввода*/
-      if (isset($_POST["strSpace"])) {
-          $strSpace = $_POST["strSpace"];
+      if (isset($_POST['strSpace'])) {
+          $strSpace = $_POST['strSpace'];
           // Преобразуем
           $strUnderline = fReplaceSpaceUnderline($strSpace);
           // Выводим преобразованную строку
