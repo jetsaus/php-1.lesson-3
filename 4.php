@@ -76,8 +76,9 @@
         }
 
         /* Функция транслитерации строки, возвращает преобразованную строку */
-        function fTransliteration($arrTransliteration,  // массив транслитерации
-                                  $strRus = ''          // строка, к которой применяется транслитерация
+        function fTransliteration(
+                $arrTransliteration,  // массив транслитерации
+                $strRus = ''          // строка, к которой применяется транслитерация
         )
         {
             $strLat = '';
