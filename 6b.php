@@ -40,20 +40,20 @@
         ]
     ];
     
-    
     // Вывод меню
     echo '<ul>';
-    
     // Обход всех элементов главного меню
     foreach ($menu as $mainMenu => $subMenu) {
-        echo $mainMenu;
+        echo "<li> $mainMenu: </li>";                   // вывод главного меню
+        echo '<ul>';
         // Обход всех элементов подменю
         foreach ($subMenu as $value) {
-            echo $value;
+            echo "<li><a href=\"#\"> $value </a></li>"; // вывод подменю
         }
+        echo '</ul>';
     }
-    
     echo '</ul>';
+    
     echo '<hr>';
     echo '<h4>Это подвал сайта</h4>';
     echo '<hr>';
