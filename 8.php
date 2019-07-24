@@ -13,7 +13,7 @@
     <h4>Решение:</h4>
     <?php
     // Объявили массив
-    $aProvinceCity = [
+    $regions = [
         'Московская область' => [
             'Москва',
             'Клин',
@@ -55,14 +55,14 @@
         ]
     ];
       // Цикл по областям
-      foreach ($aProvinceCity as $aKey => $aProvince) {
-          echo "<h5>$aKey:</h5>";
+      foreach ($regions as $region => $cities) {
+          echo "<h5>$region:</h5>";
           echo '<ol>';
           // Цикл по городам области
-          foreach ($aProvince as $bProvinceCity) {
+          foreach ($cities as $city) {
               // Если название города начинается с буквы 'К', то выведем его в список
-              if (mb_substr($bProvinceCity, 0, 1) == 'К') {
-                  echo "<li>$bProvinceCity</li>";
+          if (mb_substr($city, 0, 1) == 'К') {
+                  echo "<li>$city</li>";
               }
           }
           echo '</ol>';

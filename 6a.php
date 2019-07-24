@@ -39,10 +39,10 @@
          * $key     - индекс элемента меню
          * $menu    - значение элемента меню
          */
-        foreach($menu as $key => $element) {
-            echo "<li><a href=\"#\">$menu[$key]</a></li>";
+        foreach($menu as $index => $element) {
+            echo "<li><a href=\"#\">$menu[$index]</a></li>";
             // вывод элементов подменю
-            if($key==1) {
+            if($index==1) {
                 // Если это элемент "О себе" выводим дополнительно меню
                 echo '<ul>';
                 foreach ($submenu as $subelement) {

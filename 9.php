@@ -92,11 +92,11 @@
       {
           $arrStr = mb_str_split($strSpace);
           $strReturn = '';
-          foreach ($arrStr as $strValue) {
-              if ($strValue == ' ') {
-                  $strValue = '_';
+          foreach ($arrStr as $strSymbol) {
+              if ($strSymbol == ' ') {
+                  $strSymbol = '_';
               }
-              $strReturn .= $strValue;
+              $strReturn .= $strSymbol;
           }
           return $strReturn;
       }

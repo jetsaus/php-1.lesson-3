@@ -1,7 +1,7 @@
 <?php
     echo '<h4>Задание №3:</h4><hr>';
     // Объявление массива областей/городов
-    $aProvinceCity = [
+    $regions = [
         'Московская область' => [
             'Москва',
             'Клин',
@@ -43,12 +43,12 @@
     ];
     // Вывод массива
     // Цикл по областям
-    foreach ($aProvinceCity as $aKey => $aProvince) {
-        echo "<h5>$aKey:</h5>";
+    foreach ($regions as $region => $cities) {
+        echo "<h5>$region:</h5>";
         echo '<ol>';
         // Цикл по городам области
-        foreach ($aProvince as $bProvinceCity) {
-          echo "<li>$bProvinceCity</li>";
+        foreach ($cities as $city) {
+          echo "<li>$city</li>";
         }
         echo '</ol>';
     }

@@ -47,8 +47,8 @@
         echo "<li> $mainMenu: </li>";                   // вывод главного меню
         echo '<ul>';
         // Обход всех элементов подменю
-        foreach ($subMenu as $value) {
-            echo "<li><a href=\"#\"> $value </a></li>"; // вывод подменю
+        foreach ($subMenu as $elementMenu) {
+            echo "<li><a href=\"#\"> $elementMenu </a></li>"; // вывод подменю
         }
         echo '</ul>';
     }
