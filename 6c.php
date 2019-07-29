@@ -6,6 +6,91 @@
 </head>
 <body>
 <?php
+    // Вложенный ассоциативный массив элементов меню
+    $menu = [
+        [
+        'title' => 'Портал',
+        'link'  => '#',
+           'submenu'   => [
+                [
+                    'title' => 'Главная страница',
+                    'link'  => '#'
+                ],
+                [
+                    'title' => 'Карта сайта',
+                    'link'  => '#'
+                ]
+            ]
+        ],
+        [
+        'title' => 'Об авторе',
+        'link'  => '#',
+            'submenu'   => [
+                [
+                    'title' => 'ФИО',
+                    'link'  => '#'
+                ],
+                [
+                    'title' => 'Возраст',
+                    'link'  => '#'
+                ],
+                [
+                    'title' => 'Место рождения',
+                    'link'  => '#'
+                ]
+            ],
+        ],
+        [
+        'title' => 'Контакты',
+        'link'  => '#',
+            'submenu'   => [
+                [
+                    'title' => 'Почтовый адрес',
+                    'link'  => '#'
+                ],
+                [
+                    'title' => 'Телефон',
+                    'link'  => '#'
+                ],
+                [
+                    'title' => 'E-mail',
+                    'link'  => '#'
+                ]
+            ],
+        ],
+        [
+        'title' => 'Помощь',
+        'link'  => '#',
+            'submenu'     => [
+                [
+                    'title' => 'О портале',
+                    'link'  => '#'
+                ],
+                [
+                    'title' => 'Лицензия',
+                    'link'  => '#'
+                ]
+            ]
+        ]
+    ];
+
+
+    /*
+     * Функция создания меню createMenu
+     * Входные параметры:
+     *  menuItems - вложенный ассоциативный массив элементов меню
+     */
+    function createMenu($menuItems)
+    {
+        echo '<ul>';
+        foreach($menuItems as $menuItem) {
+            echo '<li>';
+            echo '<a href="' . $menuItem['link'] . '">' . $menuItem['title'] . '</a>';
+            echo '</li>';
+        }
+        echo '</ul';
+    }
+    
     echo('<h4>Задание №6:</h4>');
     echo('<hr>');
     echo '<p>
@@ -18,87 +103,11 @@
     echo '<hr>';
     echo '<h4><i>Меню сайта:</i></h4>';
     
-    // Вложенный ассоциативный массив элементов меню
-    $menu = [
-        'title' => 'Портал',
-        'link'  => '#',
-        'submenu'   => [
-            [
-                'title' => 'Главная страница',
-                'link'  => '#'
-            ],
-            [
-                'title' => 'Карта сайта',
-                'link'  => '#'
-            ]
-         ],
-        
-        'title' => 'Об авторе',
-        'link'  => '#',
-        'submenu'   => [
-            [
-                'title' => 'ФИО',
-                'link'  => '#'
-            ],
-            [
-                'title' => 'Возраст',
-                'link'  => '#'
-            ],
-            [
-                'title' => 'Место рождения',
-                'link'  => '#'
-            ]
-        ],
-
-        'title' => 'Контакты',
-        'link'  => '#',
-        'submenu'   => [
-            [
-                'title' => 'Почтовый адрес',
-                'link'  => '#'
-            ],
-            [
-                'title' => 'Телефон',
-                'link'  => '#'
-            ],
-            [
-                'title' => 'E-mail',
-                'link'  => '#'
-            ]
-        ],
-
-        'title' => 'Помощь',
-        'link'  => '#',
-        'submenu'     => [
-            [
-                'title' => 'О портале',
-                'link'  => '#'
-            ],
-            [
-                'title' => 'Лицензия',
-                'link'  => '#'
-            ]
-        ],
-
-        ];
-/*
-        // Вывод меню
-        echo '<ul>';
-        // Обход всех элементов главного меню
-        foreach ($menu as $mainMenu => $subMenu) {
-            echo "<li> $mainMenu: </li>";                   // вывод главного меню
-            echo '<ul>';
-            // Обход всех элементов подменю
-            foreach ($subMenu as $elementMenu) {
-                echo "<li><a href=\"#\"> $elementMenu </a></li>"; // вывод подменю
-            }
-            echo '</ul>';
-        }
-        echo '</ul>';
-*/
-        echo '<hr>';
-        echo '<h4>Это подвал сайта</h4>';
-        echo '<hr>';
+    createMenu($menu);
+    
+    echo '<hr>';
+    echo '<h4>Это подвал сайта</h4>';
+    echo '<hr>';
 ?>
 </body>
 </html>
