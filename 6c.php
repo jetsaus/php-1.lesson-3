@@ -33,20 +33,6 @@
         [
         'title' => 'Контакты',
         'link'  => '#',
-            'submenu'   => [
-                [
-                    'title' => 'Почтовый адрес',
-                    'link'  => '#'
-                ],
-                [
-                    'title' => 'Телефон',
-                    'link'  => '#'
-                ],
-                [
-                    'title' => 'E-mail',
-                    'link'  => '#'
-                ]
-            ],
         ],
         [
         'title' => 'Помощь',
@@ -60,9 +46,14 @@
     )
     {
         echo '<ul>';
-        foreach($menuItems as $menuItem) {
+        foreach($menuItems as $menuKey => $menuItem) {
             echo '<li>';
+            // создание меню верхнего уровня
             echo '<a href="' . $menuItem['link'] . '">' . $menuItem['title'] . '</a>';
+            // создание подменю, если оно описано в массиве $menu
+            if (!empty($menuItem['submenu'])) {
+                createMenu($menuItem['submenu']);
+            }
             echo '</li>';
         }
         echo '</ul';
