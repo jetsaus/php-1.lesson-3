@@ -54,13 +54,10 @@
         ]
     ];
 
-
-    /*
-     * Функция создания меню createMenu
-     * Входные параметры:
-     *  menuItems - вложенный ассоциативный массив элементов меню
-     */
-    function createMenu($menuItems)
+    // Функция создания меню createMenu из ассоциативного массива $menuItems
+    function createMenu(
+            $menuItems  // ассоциативный вложенный массив элементов меню
+    )
     {
         echo '<ul>';
         foreach($menuItems as $menuItem) {
